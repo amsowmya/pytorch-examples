@@ -1,0 +1,19 @@
+model.train()
+model.eval()
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+model.to(device)
+# -> easy GPU/TPU support
+# -> Scale GPUs
+
+optimizer.zero_grad()
+loss.backward()
+optimizer.step()
+
+with torch.no_grad()
+    ...
+
+x = x.detach()
+
+# Bonus: - Tensorboard support
+#        - prints tips / hints
